@@ -7,6 +7,7 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 import { MissionVisionSections } from '@/components/sections/MissionVision';
 import BenefitsSection from '@/components/sections/Benefits';
 import ContactSection from '@/components/sections/Contact';
+import PartnersSection from '@/components/sections/Partners';
 // Import other sections as needed
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
           <MissionVisionSections />
           <Services />
           <BenefitsSection />
+          <PartnersSection />
           <ContactSection />
         </AnimatedSection>
         
