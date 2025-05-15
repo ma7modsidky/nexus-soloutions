@@ -8,7 +8,7 @@ export default function Button({ children, variant = 'primary', className = '', 
 
   return (
     <button
-      className={`px-6 py-3 rounded-lg font-medium transition-colors ${variants[variant]} ${className}`}
+      className={`px-6 py-3 rounded-lg font-medium transition-colors ${variants[variant]} ${className} cursor-pointer`}
       {...props}
     >
       {children}

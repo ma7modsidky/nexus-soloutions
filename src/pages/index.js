@@ -8,27 +8,31 @@ import { MissionVisionSections } from '@/components/sections/MissionVision';
 import BenefitsSection from '@/components/sections/Benefits';
 import ContactSection from '@/components/sections/Contact';
 import PartnersSection from '@/components/sections/Partners';
+import WhyPartnerSection from '@/components/sections/WhyPartner';
+import Differentiators from '@/components/sections/Differentiators';
 // Import other sections as needed
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>CompanyName | Digital Solutions</title>
-        <meta name="description" content="We build digital experiences that drive results" />
+        <title>Nexus Soloutions | Outsourcing Solutions</title>
+        <meta name="description" content="End-to-End Business Process Outsourcing" />
       </Head>
       
       <Header />
       
-      <main className='overflow-hidden
+      <main className='overflow-hidden pt-22
       '>
         <AnimatedSection delay={0.2}>
           <Hero />
-          <MissionVisionSections />
+          {/* <MissionVisionSections /> */}
+          <WhyPartnerSection />
           <Services />
-          <BenefitsSection />
-          <PartnersSection />
-          <ContactSection />
+          <Differentiators />
+          {/* <BenefitsSection /> */}
+          {/* <PartnersSection /> */}
+          {/* <ContactSection /> */}
         </AnimatedSection>
         
         {/* Add other sections here */}

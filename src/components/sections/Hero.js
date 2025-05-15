@@ -80,7 +80,7 @@ export default function Hero() {
             animate="visible"
             variants={headingVariants}
           >
-            <span className="text-primary">Transform</span> Your Workforce Strategy
+            <span className="text-primary">Transform</span> Your Customer Experience with AI-Driven Call Center Solo-utions
           </motion.h1>
           
           <motion.p 
@@ -93,6 +93,8 @@ export default function Hero() {
             HR outsourcing solutions. Focus on your core business while we handle 
             the complexities of talent acquisition, payroll, and compliance.
           </motion.p>
+
+           
           
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 pt-6"
@@ -103,9 +105,9 @@ export default function Hero() {
             <Button 
               variant="primary" 
               className="text-lg px-8 py-4"
-              onClick={() => scrollToSection('contact')}
+              onClick={() => window.location.href = '/contact#form'}
             >
-              Get Your Free Consultation
+              Get a Free Quote Today
             </Button>
             <Button 
               variant="outline-white" 
@@ -115,13 +117,21 @@ export default function Hero() {
               Our Services
             </Button>
           </motion.div>
+          <motion.p 
+            className="text-md sm:text-md leading-relaxed"
+            initial="hidden"
+            animate="visible"
+            variants={paragraphVariants}
+          >
+            Certified, secure, and scalable support for customer service, medical billing, tech support, and sales—delivered 24/7 at competitive rates.
+          </motion.p>
         </div>
       </div>
       
       {/* Scrolling indicator */}
       <button 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce focus:outline-none"
-        onClick={() => scrollToSection('mission-vision')}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce focus:outline-none mt-4"
+        onClick={() => scrollToSection('why-partner')}
         aria-label="Scroll down"
       >
         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
