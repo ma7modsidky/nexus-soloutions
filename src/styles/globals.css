@@ -1,8 +1,23 @@
 @import "tailwindcss";
+@font-face {
+  font-family: 'Nexa-Heavy';
+  src: url('/fonts/Nexa-Heavy.ttf') format('truetype');
+  font-weight: 900; /* Heavy weight */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('/fonts/Nexa-Extra-Light.ttf') format('truetype');
+  font-weight: 400; /* Extra Light weight */
+  font-display: swap;
+}
+
 @theme {
   --color-primary: #e6ba38;
   --color-secondary: #698ebf;
   --color-background: #efefef;
+
   
 }
 /* Force hover variants to work on all devices */
@@ -10,6 +25,18 @@
 @custom-variant hover (&:hover);
 @custom-variant group-hover (.group:hover &);
 @custom-variant peer-hover (.peer:hover ~ &);
+
+
+
+/* Set Nexa as default font */
+/* body {
+  font-family: 'Nexa', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 200;  
+}
+h1,h2,h3 {
+  font-family: 'Nexa-Heavy', -apple-system, BlinkMacSystemFont, sans-serif;
+} */
+
 
 /* :root {
   --primary: #e6ba38

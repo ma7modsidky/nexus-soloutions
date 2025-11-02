@@ -72,7 +72,7 @@ export default function Header() {
               onClick={closeMenu}
             >
               <Image
-                src="/images/logo.png"
+                src="/images/logo3.png"
                 alt="Company Logo"
                 width={180}
                 height={50}
@@ -121,7 +121,7 @@ export default function Header() {
         <div className="flex flex-col h-full p-6">
           {/* Header with Close Button */}
           <div className="flex justify-between items-center mb-8">
-            <Link href="/" onClick={closeMenu}>
+            {/* <Link href="/" onClick={closeMenu}>
               <Image
                 src="/images/logo.png"
                 alt="Company Logo"
@@ -131,7 +131,8 @@ export default function Header() {
                 priority
                 
               />
-            </Link>
+            </Link> */}
+            <div></div>
             <button
               onClick={closeMenu}
               className="p-2 text-gray-700 hover:text-primary"

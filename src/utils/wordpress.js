@@ -1,7 +1,7 @@
 // utils/wordpress.js
 import axios from 'axios';
 
-const API_URL = 'https://nexussoloutions.com/wp-json';
+const API_URL = 'https://api.nexussoloutions.com/wp-json';
 
 export const wp = axios.create({
   baseURL: API_URL,
@@ -26,7 +26,7 @@ try {
     const res = await wp.get(`/wp/v2/posts?slug=${slug}&_embed`);
     return res.data[0]
 } catch  (error) {
-    console.error('Error fetching posts:', error);
+    console.error('Error fetching post:', error);
     return [];
 }
 }
@@ -38,5 +38,65 @@ export async function getJobs() {
   } catch (error) {
     console.error('Error fetching jobs:', error);
     return [];
+  }
+}
+
+export async function getJobBySlug(slug) {
+try {
+    const res = await wp.get(`/wp/v2/jobs?slug=${slug}&_embed`);
+    return res.data[0]
+} catch  (error) {
+    console.error('Error fetching job:', error);
+    return [];
+}
+}
+
+// Submit directly to CF7's endpoint
+// export async function submitContactForm(formData) {
+//   try {
+//     const response = await wp.post('/contact-form-7/v1/contact-forms/22/feedback', {
+//       'your-name': formData.name,
+//       'your-company': formData.company,
+//       'your-email': formData.email,
+//       'your-phone': formData.phone,
+//       'your-service': formData.service,
+//       'your-message': formData.message
+//     }, {
+//       headers: {
+//         'Content-Type': 'application/x-www-form-urlencoded',
+//       }
+//     });
+//     return response.data;
+//   } catch (error) {
+//     console.error('Form submission error:', error.response?.data || error.message);
+//     throw error;
+//   }
+// }
+
+export async function submitContactForm(formData) {
+  try {
+    const multipartForm = new FormData();
+    multipartForm.append('your-name', formData.name);
+    multipartForm.append('your-company', formData.company);
+    multipartForm.append('your-email', formData.email);
+    multipartForm.append('your-phone', formData.phone);
+    multipartForm.append('your-service', formData.service);
+    multipartForm.append('your-message', formData.message);
+    multipartForm.append("_wpcf7_unit_tag", "'wpcf7-2722d5f'");
+
+    const response = await wp.post(
+      '/contact-form-7/v1/contact-forms/22/feedback',
+      multipartForm,
+      {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      }
+    );
+    console.log(response.data)
+    return response.data;
+  } catch (error) {
+    console.error('Form submission error:', error.response?.data || error.message);
+    throw error;
   }
 }

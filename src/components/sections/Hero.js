@@ -80,11 +80,11 @@ export default function Hero() {
             animate="visible"
             variants={headingVariants}
           >
-            <span className="text-primary">Transform</span> Your Customer Experience with AI-Driven Call Center Solo-utions
+            <span className="text-primary font-900">Transform</span> Your Customer Experience with AI-Driven Call Center Solo-utions
           </motion.h1>
           
           <motion.p 
-            className="text-xl sm:text-2xl leading-relaxed"
+            className="text-xl sm:text-lg leading-relaxed "
             initial="hidden"
             animate="visible"
             variants={paragraphVariants}

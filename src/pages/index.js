@@ -10,6 +10,7 @@ import ContactSection from '@/components/sections/Contact';
 import PartnersSection from '@/components/sections/Partners';
 import WhyPartnerSection from '@/components/sections/WhyPartner';
 import Differentiators from '@/components/sections/Differentiators';
+import { nexaHeavy, nexaExtralight } from '../utils/fonts'
 // Import other sections as needed
 
 export default function Home() {
@@ -22,8 +23,8 @@ export default function Home() {
       
       <Header />
       
-      <main className='overflow-hidden pt-22
-      '>
+      <main className={`overflow-hidden pt-22 ${nexaHeavy.variable} ${nexaExtralight.variable}`}
+      >
         <AnimatedSection delay={0.2}>
           <Hero />
           {/* <MissionVisionSections /> */}

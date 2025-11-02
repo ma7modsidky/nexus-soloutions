@@ -121,6 +121,6 @@ export async function getStaticProps() {
   const posts = await getPosts('?_embed');
   return {
     props: { initialPosts: posts },
-    revalidate: 60 // ISR: Regenerate every 60 seconds
+    revalidate: 120 // ISR: Regenerate every 60 seconds
   };
 }

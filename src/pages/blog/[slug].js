@@ -24,9 +24,15 @@ export default function PostDetail({ post, recentPosts }) {
             <div className="lg:w-2/3">
               <article className="bg-white shadow overflow-hidden rounded-lg">
                 {/* Featured Image */}
-                {post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
+                {post._embedded?.['wp:featuredmedia']?.[0]?.source_url ? (
                   <img 
                     src={post._embedded['wp:featuredmedia'][0].source_url} 
+                    alt={post.title.rendered}
+                    className="w-full h-64 md:h-96 object-cover"
+                  />
+                ):(
+                  <img 
+                    src='/images/placeholder-image.jpg'
                     alt={post.title.rendered}
                     className="w-full h-64 md:h-96 object-cover"
                   />
@@ -108,13 +114,13 @@ export default function PostDetail({ post, recentPosts }) {
                       <p className="text-sm text-gray-500 mt-1">
                         {new Date(recentPost.date).toLocaleDateString()}
                       </p>
-                      {recentPost._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
+                      {/* {recentPost._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
                         <img 
                           src={recentPost._embedded['wp:featuredmedia'][0].source_url} 
                           alt={recentPost.title.rendered}
                           className="w-full h-32 object-cover mt-2 rounded-md"
                         />
-                      )}
+                      )} */}
                     </div>
                   ))}
                 </div>
@@ -135,13 +141,13 @@ export default function PostDetail({ post, recentPosts }) {
                     className="group cursor-pointer"
                     onClick={() => router.push(`/blog/${recentPost.slug}`)}
                   >
-                    {recentPost._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
+                    {/* {recentPost._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
                       <img 
                         src={recentPost._embedded['wp:featuredmedia'][0].source_url} 
                         alt={recentPost.title.rendered}
                         className="w-full h-40 object-cover rounded-md"
                       />
-                    )}
+                    )} */}
                     <h3 className="text-lg font-medium text-gray-900 mt-2 group-hover:text-indigo-600 transition">
                       {recentPost.title.rendered}
                     </h3>
@@ -181,6 +187,6 @@ export async function getStaticProps({ params }) {
       post,
       recentPosts: recentPosts.filter(p => p.slug !== params.slug).slice(0, 3)
     },
-    revalidate: 60
+    revalidate: 120
   };
 }

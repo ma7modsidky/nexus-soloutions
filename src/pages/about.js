@@ -37,10 +37,10 @@ export default function About() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ 
-    once: true,
-    margin: "0px 0px -100px 0px", // Adjust bottom margin
-    amount: 0.1 // Require only 10% visibility
-  }}
+                once: true,
+                margin: "0px 0px -100px 0px", // Adjust bottom margin
+                amount: 0.1 // Require only 10% visibility
+              }}
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
@@ -67,19 +67,24 @@ export default function About() {
                 <div className="prose-lg text-gray-600 space-y-6">
                   <p>
                     <strong>Our Story</strong><br />
-                    Nexus Solutions was founded in 2022, currently serving 10 industries globally.
+                    Nexus Soloutions Founded in 2022, Currently serving 10 industries globally.
                   </p>
                   <p>
-                    At Nexus Solutions, we don't just connect businesses with customers — we empower every conversation. 
+                    At Nexus Soloutions, we don't just connect businesses with customers — we empower every conversation. 
                     As a leading provider of call center and customer service agents, we specialize in delivering tailored, 
                     high-quality support solutions across a wide range of industries.
                   </p>
                   <p>
                     Whether you're a startup or a multinational corporation, our agents become a seamless extension of your brand. 
-                    The name "Solutions" reflects our ability to deliver scalable, effective strategies for customer engagement.
+                    The name "Solo-utions" is a unique blend of two core values:
                   </p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li><strong>Solo</strong> – representing our commitment to personalized, one-on-one service for each client.</li>
+                    <li><strong>Solutions</strong> – reflecting our ability to deliver scalable, effective strategies for customer engagement.</li>
+                  </ul>
                   <p>
-                    With Nexus symbolizing connection and synergy, Nexus Solutions is where unique service meets smart strategy.
+                    Together, they form Solo-utions — a name that stands for personalized performance.
+                    With Nexus symbolizing connection and synergy, Nexus Solo-utions is where unique service meets smart strategy.
                   </p>
                 </div>
               </motion.div>
@@ -135,72 +140,103 @@ export default function About() {
         </section>
 
         {/* Leadership */}
-        <section className="py-20">
-          <div className="container mx-auto px-6 max-w-5xl">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Leadership</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Meet the visionaries driving our success
-              </p>
-            </motion.div>
+<section className="py-20">
+  <div className="container mx-auto px-6 max-w-5xl">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="text-center mb-16"
+    >
+      <h2 className="text-3xl md:text-4xl font-bold mb-6">Leadership</h2>
+      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        Meet the visionaries driving our success
+      </p>
+    </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-12">
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="bg-white p-8 rounded-xl shadow-md text-center"
-              >
-                <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary">
-                  <Image 
-                    src="/images/placeholder-image.jpg" 
-                    alt="Kareem Maghraby"
-                    width={160}
-                    height={160}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <h3 className="text-2xl font-bold mb-2">Kareem Maghraby</h3>
-                <p className="text-primary font-medium mb-4">Chief Executive Officer</p>
-                <p className="text-gray-600">
-                  With over 15 years in the customer service industry, Kareem founded Nexus Solutions to revolutionize 
-                  the outsourcing landscape with ethical practices and innovative solutions.
-                </p>
-              </motion.div>
+    <div className="flex flex-wrap justify-center gap-8">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] min-w-[300px] max-w-[400px] bg-white p-8 rounded-xl shadow-md text-center"
+      >
+        <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary">
+          <Image 
+            src="/images/team/kareem-maghraby.jpg" 
+            alt="Kareem El Maghraby"
+            width={160}
+            height={160}
+            className="object-cover w-full h-full"
+          />
+        </div>
+        <h3 className="text-2xl font-bold mb-2">Kareem Maghraby</h3>
+        <p className="text-primary font-medium mb-4">Founder & Chief Executive Officer (CEO)</p>
+        <p className="text-gray-600">
+          Kareem El Maghraby is an Egyptian-American entrepreneur with over 20 years of diverse experience in IT, 
+          customer service, and corporate management. He has successfully led teams of more than 1,200 employees 
+          and achieved remarkable success stories. Kareem's vision is to reach every client with exceptional service 
+          and to maintain customer satisfaction under all circumstances.
+        </p>
+      </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white p-8 rounded-xl shadow-md text-center"
-              >
-                <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary">
-                  <Image 
-                    src="/images/placeholder-image.jpg" 
-                    alt="Omar Qoura"
-                    width={160}
-                    height={160}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <h3 className="text-2xl font-bold mb-2">Omar Qoura</h3>
-                <p className="text-primary font-medium mb-4">Chief Operating Officer</p>
-                <p className="text-gray-600">
-                  Omar brings a decade of operational excellence to Nexus Solutions, specializing in scaling customer 
-                  service operations while maintaining exceptional quality standards.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] min-w-[300px] max-w-[400px] bg-white p-8 rounded-xl shadow-md text-center"
+      >
+        <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary">
+          <Image 
+            src="/images/team/omar-quora.jpg" 
+            alt="Omar Quora"
+            width={160}
+            height={160}
+            className="object-cover w-full h-full"
+          />
+        </div>
+        <h3 className="text-2xl font-bold mb-2">Omar Quora</h3>
+        <p className="text-primary font-medium mb-4">Founder & Chief Marketing Officer (CMO)</p>
+        <p className="text-gray-600">
+          Omar Quora is an Egyptian entrepreneur with over 15 years of experience across multiple industries, 
+          including real estate, customer service, tourism, and corporate management. He has led teams of more 
+          than 500 employees and achieved outstanding sales exceeding EGP 2 billion over the past four years. 
+          Omar's vision focuses on positioning the company among top industry players by delivering exceptional service.
+        </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] min-w-[300px] max-w-[400px] bg-white p-8 rounded-xl shadow-md text-center"
+      >
+        <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary">
+          <Image 
+            src="/images/team/waleed-el-banna.jpg" 
+            alt="Waleed El Banna"
+            width={160}
+            height={160}
+            className="object-cover w-full h-full"
+          />
+        </div>
+        <h3 className="text-2xl font-bold mb-2">Waleed El Banna</h3>
+        <p className="text-primary font-medium mb-4">Founder & Chief Financial Officer (CFO)</p>
+        <p className="text-gray-600">
+          Waleed El Banna is one of the founding partners and the financial backbone of the company. 
+          He is an Egyptian entrepreneur with over 25 years of financial expertise in various sectors, 
+          including food services, customer service, and tourism. Waleed has successfully led multiple 
+          organizations with consistent financial growth and stability. His vision centers on driving 
+          Nexus Solo-utions to compete among leading names through exceptional service and strategic planning.
+        </p>
+      </motion.div>
+    </div>
+  </div>
+</section>
 
         {/* Values */}
         <section className="py-20 bg-gray-50">
@@ -226,7 +262,7 @@ export default function About() {
                 <h3 className="text-2xl font-bold mb-4 text-primary">Our Mission</h3>
                 <p className="text-gray-600 mb-6">
                   To empower businesses through personalized and scalable customer service solutions. At Nexus Solutions, 
-                  our mission is to be the voice behind every great brand — delivering exceptional support experiences 
+                  our mission is to be the voice behind every great brand, delivering exceptional support experiences 
                   that drive loyalty, growth, and trust.
                 </p>
               </motion.div>
@@ -263,9 +299,9 @@ export default function About() {
                 Partner with confidence and experience the Nexus Solutions difference.
               </p>
               <Button 
-                href="/contact" 
+                
                 variant='primary'
-                // className="bg-white text-primary hover:bg-gray-100 px-8 py-3 text-lg font-semibold"
+                onClick={() => window.location.href = '/contact#form'}
               >
                 Contact Us
               </Button>

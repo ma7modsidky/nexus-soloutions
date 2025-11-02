@@ -1,4 +1,5 @@
 'use client';
+import Head from 'next/head';
 import { motion } from 'framer-motion';
 import Button from '../components/ui/Button';
 import Header from '../components/layout/Header';
@@ -58,6 +59,10 @@ export default function ServicesPage() {
 
   return (
     <>
+    <Head>
+        <title>Our Services | Nexus Soloutions</title>
+        <meta name="description" content="Human-Centric Outsourcing, Powered by Innovation" />
+    </Head>
     <Header />
     <div className="bg-white mt-20">
       {/* Hero Section */}
