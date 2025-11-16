@@ -100,7 +100,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-6 text-primary">Connect With Us</h3>
             <div className="mb-6">
-              <p className="mb-4">2900 Knights RD, <br />Philadelphia, PA 19020 United States of America</p>
+              {/* <p className="mb-4">2900 Knights RD, <br />Philadelphia, PA 19020 United States of America</p> */}
               <p>Email: info@nexussolutions.com</p>
               <p>Phone: +1 (445) 448-6171 </p>
             </div>
@@ -139,7 +139,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 Nexus Solutions. All rights reserved.</p>
+          <p>&copy; 2025 Nexus Soloutions. All rights reserved.</p>
         </div>
       </div>
     </footer>

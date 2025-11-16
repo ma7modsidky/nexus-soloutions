@@ -8,7 +8,10 @@ import {
   FaHeadset,
   FaFileMedical,
   FaLaptopCode,
-  FaChevronRight
+  FaChevronRight,
+  FaPhoneAlt,
+  FaCalendarCheck,
+  FaDollarSign
 } from 'react-icons/fa';
 
 const services = [
@@ -47,6 +50,42 @@ const services = [
       'Knowledge base integration'
     ],
     useCase: 'Resolve 80% of basic Tier 1/2 tickets in under 10 minutes.'
+  },
+  {
+    title: 'Sales Solutions',
+    icon: <FaPhoneAlt className="text-primary text-3xl" />,
+    features: [
+      'Outbound and inbound sales campaigns',
+      'Lead qualification and nurturing',
+      'CRM integration and management',
+      'Sales pipeline optimization',
+      'Performance analytics and reporting'
+    ],
+    useCase: 'Increase conversion rates by 25% with our targeted sales approach.'
+  },
+  {
+    title: 'Appointment Setting',
+    icon: <FaCalendarCheck className="text-primary text-3xl" />,
+    features: [
+      'Professional appointment scheduling',
+      'Calendar management and synchronization',
+      'Follow-up and reminder systems',
+      'Multi-channel booking (phone, email, web)',
+      'No-show reduction strategies'
+    ],
+    useCase: 'Book 50+ qualified appointments per month per agent.'
+  },
+  {
+    title: 'Financial Support',
+    icon: <FaDollarSign className="text-primary text-3xl" />,
+    features: [
+      'Accounts payable and receivable management',
+      'Invoice processing and reconciliation',
+      'Financial data entry and reporting',
+      'Budget tracking and analysis',
+      'Compliance and audit preparation'
+    ],
+    useCase: 'Reduce financial processing costs by 40% while improving accuracy.'
   }
 ];
 
@@ -60,7 +99,7 @@ export default function ServicesPage() {
   return (
     <>
     <Head>
-        <title>Our Services | Nexus Soloutions</title>
+        <title>Our Services | Nexus Solutions</title>
         <meta name="description" content="Human-Centric Outsourcing, Powered by Innovation" />
     </Head>
     <Header />

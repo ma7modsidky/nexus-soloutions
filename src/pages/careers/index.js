@@ -150,7 +150,7 @@ export default function Careers({ initialJobs }) {
               </p>
               <button 
                 className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-medium transition-colors duration-300"
-                onClick={() => window.location.href = 'mailto:careers@yourcompany.com'}
+                onClick={() => window.location.href = 'mailto:careers@nexussoloutions.com'}
               >
                 Submit Your Resume
               </button>

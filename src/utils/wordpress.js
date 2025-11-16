@@ -11,13 +11,31 @@ export const wp = axios.create({
 
 
 // Helper functions
-export async function getPosts() {
+export async function getPosts(query = '') {
   try {
-      const res = await wp.get('/wp/v2/posts?_embed');
-      return res.data
-  } catch  (error) {
-      console.error('Error fetching posts:', error);
-      return [];
+    const res = await wp.get(`/wp/v2/posts?_embed${query}`);
+    return {
+      posts: res.data,
+      totalPages: parseInt(res.headers['x-wp-totalpages']) || 1,
+      totalPosts: parseInt(res.headers['x-wp-total']) || 0
+    };
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    return { posts: [], totalPages: 1, totalPosts: 0 };
+  }
+}
+
+// Remove or update getPostsCount since we're getting the data from getPosts
+export async function getPostsCount() {
+  try {
+    const res = await wp.get('/wp/v2/posts?per_page=1');
+    return {
+      totalPosts: parseInt(res.headers['x-wp-total']) || 0,
+      totalPages: parseInt(res.headers['x-wp-totalpages']) || 0
+    };
+  } catch (error) {
+    console.error('Error fetching posts count:', error);
+    return { totalPosts: 0, totalPages: 0 };
   }
 }
 

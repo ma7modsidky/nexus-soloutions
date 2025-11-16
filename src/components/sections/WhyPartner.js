@@ -23,7 +23,7 @@ export default function WhyPartnerSection() {
     {
       icon: <FaHeadset className="text-primary text-2xl" />,
       title: "Omnichannel Support",
-      description: "Phone, email, chat, social media—seamlessly integrated."
+      description: "Phone, email, chat, social media-seamlessly integrated."
     },
     {
       icon: <FaExpandArrowsAlt className="text-primary text-2xl" />,

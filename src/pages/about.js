@@ -15,7 +15,7 @@ export default function About() {
       </Head>
       <Header />
       
-      <main className="bg-white overflow-hidden py-22">
+      <main className="bg-white overflow-hidden pt-22">
         {/* Hero Section */}
         <section className="relative py-32 bg-gradient-to-r from-primary to-secondary">
           <div className="container mx-auto px-6 text-center text-white">
@@ -70,7 +70,7 @@ export default function About() {
                     Nexus Soloutions Founded in 2022, Currently serving 10 industries globally.
                   </p>
                   <p>
-                    At Nexus Soloutions, we don't just connect businesses with customers — we empower every conversation. 
+                    At Nexus Soloutions, we don't just connect businesses with customers, we empower every conversation. 
                     As a leading provider of call center and customer service agents, we specialize in delivering tailored, 
                     high-quality support solutions across a wide range of industries.
                   </p>
@@ -83,7 +83,7 @@ export default function About() {
                     <li><strong>Solutions</strong> – reflecting our ability to deliver scalable, effective strategies for customer engagement.</li>
                   </ul>
                   <p>
-                    Together, they form Solo-utions — a name that stands for personalized performance.
+                    Together, they form Solo-utions, a name that stands for personalized performance.
                     With Nexus symbolizing connection and synergy, Nexus Solo-utions is where unique service meets smart strategy.
                   </p>
                 </div>
@@ -140,103 +140,103 @@ export default function About() {
         </section>
 
         {/* Leadership */}
-<section className="py-20">
-  <div className="container mx-auto px-6 max-w-5xl">
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="text-center mb-16"
-    >
-      <h2 className="text-3xl md:text-4xl font-bold mb-6">Leadership</h2>
-      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-        Meet the visionaries driving our success
-      </p>
-    </motion.div>
+        <section className="py-20">
+          <div className="container mx-auto px-6 max-w-5xl">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Leadership</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Meet the visionaries driving our success
+              </p>
+            </motion.div>
 
-    <div className="flex flex-wrap justify-center gap-8">
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] min-w-[300px] max-w-[400px] bg-white p-8 rounded-xl shadow-md text-center"
-      >
-        <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary">
-          <Image 
-            src="/images/team/kareem-maghraby.jpg" 
-            alt="Kareem El Maghraby"
-            width={160}
-            height={160}
-            className="object-cover w-full h-full"
-          />
-        </div>
-        <h3 className="text-2xl font-bold mb-2">Kareem Maghraby</h3>
-        <p className="text-primary font-medium mb-4">Founder & Chief Executive Officer (CEO)</p>
-        <p className="text-gray-600">
-          Kareem El Maghraby is an Egyptian-American entrepreneur with over 20 years of diverse experience in IT, 
-          customer service, and corporate management. He has successfully led teams of more than 1,200 employees 
-          and achieved remarkable success stories. Kareem's vision is to reach every client with exceptional service 
-          and to maintain customer satisfaction under all circumstances.
-        </p>
-      </motion.div>
+            <div className="flex flex-wrap justify-center gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] min-w-[300px] max-w-[400px] bg-white p-8 rounded-xl shadow-md text-center"
+              >
+                <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary">
+                  <Image 
+                    src="/images/team/kareem-maghraby.jpg" 
+                    alt="Kareem Maghraby"
+                    width={160}
+                    height={160}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Kareem Maghraby</h3>
+                <p className="text-primary font-medium mb-4">Founder & Chief Executive Officer (CEO)</p>
+                <p className="text-gray-600">
+                  Kareem Maghraby is an Egyptian-American entrepreneur with over 20 years of diverse experience in IT, 
+                  customer service, and corporate management. He has successfully led teams of more than 1,200 employees 
+                  and achieved remarkable success stories. Kareem's vision is to reach every client with exceptional service 
+                  and to maintain customer satisfaction under all circumstances.
+                </p>
+              </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] min-w-[300px] max-w-[400px] bg-white p-8 rounded-xl shadow-md text-center"
-      >
-        <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary">
-          <Image 
-            src="/images/team/omar-quora.jpg" 
-            alt="Omar Quora"
-            width={160}
-            height={160}
-            className="object-cover w-full h-full"
-          />
-        </div>
-        <h3 className="text-2xl font-bold mb-2">Omar Quora</h3>
-        <p className="text-primary font-medium mb-4">Founder & Chief Marketing Officer (CMO)</p>
-        <p className="text-gray-600">
-          Omar Quora is an Egyptian entrepreneur with over 15 years of experience across multiple industries, 
-          including real estate, customer service, tourism, and corporate management. He has led teams of more 
-          than 500 employees and achieved outstanding sales exceeding EGP 2 billion over the past four years. 
-          Omar's vision focuses on positioning the company among top industry players by delivering exceptional service.
-        </p>
-      </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] min-w-[300px] max-w-[400px] bg-white p-8 rounded-xl shadow-md text-center"
+              >
+                <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary">
+                  <Image 
+                    src="/images/team/omar-quora.jpg" 
+                    alt="Omar Quora"
+                    width={160}
+                    height={160}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Omar Quora</h3>
+                <p className="text-primary font-medium mb-4">Founder & Chief Marketing Officer (CMO)</p>
+                <p className="text-gray-600">
+                  Omar Quora is an Egyptian entrepreneur with over 15 years of experience across multiple industries, 
+                  including real estate, customer service, tourism, and corporate management. He has led teams of more 
+                  than 500 employees and achieved outstanding sales exceeding EGP 2 billion over the past four years. 
+                  Omar's vision focuses on positioning the company among top industry players by delivering exceptional service.
+                </p>
+              </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] min-w-[300px] max-w-[400px] bg-white p-8 rounded-xl shadow-md text-center"
-      >
-        <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary">
-          <Image 
-            src="/images/team/waleed-el-banna.jpg" 
-            alt="Waleed El Banna"
-            width={160}
-            height={160}
-            className="object-cover w-full h-full"
-          />
-        </div>
-        <h3 className="text-2xl font-bold mb-2">Waleed El Banna</h3>
-        <p className="text-primary font-medium mb-4">Founder & Chief Financial Officer (CFO)</p>
-        <p className="text-gray-600">
-          Waleed El Banna is one of the founding partners and the financial backbone of the company. 
-          He is an Egyptian entrepreneur with over 25 years of financial expertise in various sectors, 
-          including food services, customer service, and tourism. Waleed has successfully led multiple 
-          organizations with consistent financial growth and stability. His vision centers on driving 
-          Nexus Solo-utions to compete among leading names through exceptional service and strategic planning.
-        </p>
-      </motion.div>
-    </div>
-  </div>
-</section>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] min-w-[300px] max-w-[400px] bg-white p-8 rounded-xl shadow-md text-center"
+              >
+                <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary">
+                  <Image 
+                    src="/images/team/waleed-el-banna.jpg" 
+                    alt="Waleed El Banna"
+                    width={160}
+                    height={160}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Waleed El Banna</h3>
+                <p className="text-primary font-medium mb-4">Founder & Chief Financial Officer (CFO)</p>
+                <p className="text-gray-600">
+                  Waleed El Banna is one of the founding partners and the financial backbone of the company. 
+                  He is an Egyptian entrepreneur with over 25 years of financial expertise in various sectors, 
+                  including food services, customer service, and tourism. Waleed has successfully led multiple 
+                  organizations with consistent financial growth and stability. His vision centers on driving 
+                  Nexus Solo-utions to compete among leading names through exceptional service and strategic planning.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
 
         {/* Values */}
         <section className="py-20 bg-gray-50">

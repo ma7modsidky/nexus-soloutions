@@ -206,8 +206,8 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold">Phone</h3>
                       <p className="text-gray-600">+1 (445) 448-6171 (USA)</p>
-                      <p className="text-gray-600">+20 115 252 3318 (Egypt)</p>
-                      <p className="text-gray-600">+44 773 554 6027 (UK)</p>
+                      {/* <p className="text-gray-600">+20 115 252 3318 (Egypt)</p>
+                      <p className="text-gray-600">+44 773 554 6027 (UK)</p> */}
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -238,22 +238,22 @@ export default function ContactPage() {
                   <div className="flex items-start">
                     <FaMapMarkerAlt className="text-primary mt-1 mr-4 text-xl" />
                     <div>
-                      <h3 className="font-semibold">USA Office</h3>
-                      <p className="text-gray-600">2900 Knights RD, Philadelphia, PA 19020 United States of America</p>
+                      <h3 className="font-semibold">USA</h3>
+                      {/* <p className="text-gray-600">2900 Knights RD, Philadelphia, PA 19020 United States of America</p> */}
                     </div>
                   </div>
                   <div className="flex items-start">
                     <FaMapMarkerAlt className="text-primary mt-1 mr-4 text-xl" />
                     <div>
-                      <h3 className="font-semibold">Egypt Office</h3>
-                      <p className="text-gray-600">81 South Loutas, New Cairo, Cairo, Egypt</p>
+                      <h3 className="font-semibold">Egypt</h3>
+                      {/* <p className="text-gray-600">81 South Loutas, New Cairo, Cairo, Egypt</p> */}
                     </div>
                   </div>
                   <div className="flex items-start">
                     <FaMapMarkerAlt className="text-primary mt-1 mr-4 text-xl" />
                     <div>
-                      <h3 className="font-semibold">UK Office</h3>
-                      <p className="text-gray-600">27 The Mount, Rickmansworth, England, WD3 4DW, United Kingdom</p>
+                      <h3 className="font-semibold">UK</h3>
+                      {/* <p className="text-gray-600">27 The Mount, Rickmansworth, England, WD3 4DW, United Kingdom</p> */}
                     </div>
                   </div>
                 </div>

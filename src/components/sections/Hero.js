@@ -123,7 +123,7 @@ export default function Hero() {
             animate="visible"
             variants={paragraphVariants}
           >
-            Certified, secure, and scalable support for customer service, medical billing, tech support, and sales—delivered 24/7 at competitive rates.
+            Certified, secure, and scalable support for customer service, medical billing, tech support, and sales-delivered 24/7 at competitive rates.
           </motion.p>
         </div>
       </div>

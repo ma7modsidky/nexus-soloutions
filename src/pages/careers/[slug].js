@@ -65,32 +65,32 @@ export default function PostDetail({ post, recentPosts }) {
                     dangerouslySetInnerHTML={{ __html: post.content.rendered }} 
                   />
 
-                  {/* Social sharing */}
-                  <div className="mt-12 pt-6 border-t border-gray-200">
-                    <h3 className="text-lg font-medium text-gray-900 mb-4">Share this post</h3>
-                    <div className="flex space-x-4">
-                      <FacebookShareButton url={currentUrl} quote={post.title.rendered}>
-                        <div className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
-                          <FaFacebook />
-                          <span>Facebook</span>
-                        </div>
-                      </FacebookShareButton>
-                      
-                      <TwitterShareButton url={currentUrl} title={post.title.rendered}>
-                        <div className="flex items-center space-x-2 bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-blue-500 transition">
-                          <FaTwitter />
-                          <span>Twitter</span>
-                        </div>
-                      </TwitterShareButton>
-                      
-                      <LinkedinShareButton url={currentUrl} title={post.title.rendered}>
-                        <div className="flex items-center space-x-2 bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-900 transition">
-                          <FaLinkedin />
-                          <span>LinkedIn</span>
-                        </div>
-                      </LinkedinShareButton>
-                    </div>
-                  </div>
+                                    {/* Social sharing */}
+<div className="mt-12 pt-6 border-t border-gray-200">
+  <h3 className="text-lg font-medium text-gray-900 mb-4">Share this post</h3>
+  <div className="flex flex-wrap gap-2">
+    <FacebookShareButton url={currentUrl} quote={post.title.rendered}>
+      <div className="flex items-center space-x-2 bg-blue-600 text-white px-3 py-2 rounded-md hover:bg-blue-700 transition text-sm">
+        <FaFacebook />
+        <span>Facebook</span>
+      </div>
+    </FacebookShareButton>
+    
+    <TwitterShareButton url={currentUrl} title={post.title.rendered}>
+      <div className="flex items-center space-x-2 bg-blue-400 text-white px-3 py-2 rounded-md hover:bg-blue-500 transition text-sm">
+        <FaTwitter />
+        <span>Twitter</span>
+      </div>
+    </TwitterShareButton>
+    
+    <LinkedinShareButton url={currentUrl} title={post.title.rendered}>
+      <div className="flex items-center space-x-2 bg-blue-800 text-white px-3 py-2 rounded-md hover:bg-blue-900 transition text-sm">
+        <FaLinkedin />
+        <span>LinkedIn</span>
+      </div>
+    </LinkedinShareButton>
+  </div>
+</div>
                 </div>
               </article>
             </div>
