@@ -8,13 +8,67 @@ import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { BeatLoader } from 'react-spinners';
 import { useRouter } from 'next/router';
+import Pagination from '../../components/ui/Pagination'; // Add this import
 
-export default function Careers({ initialJobs }) {
+export default function Careers({ initialJobs, totalPages, initialPage }) {
   const [jobs, setJobs] = useState(initialJobs);
   const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(initialPage);
   const router = useRouter();
 
-  // Handle route transitions
+  // Handle page change with validation
+  const handlePageChange = (page) => {
+    if (page < 1 || page > totalPages || page === currentPage) return;
+    
+    setLoading(true);
+    setCurrentPage(page);
+    router.push(`/careers?page=${page}`, undefined, { shallow: true });
+  };
+
+  // Fetch jobs when page changes
+  useEffect(() => {
+    const fetchPageJobs = async () => {
+      const pageFromUrl = parseInt(router.query.page) || 1;
+      
+      // Only fetch if page actually changed and is valid
+      if (pageFromUrl !== currentPage && pageFromUrl >= 1 && pageFromUrl <= totalPages) {
+        setLoading(true);
+        try {
+          const perPage = 6; // Match blog page per_page count
+          const response = await getJobs(`&page=${pageFromUrl}&per_page=${perPage}`);
+          
+          if (response && response.length > 0) {
+            setJobs(response);
+            setCurrentPage(pageFromUrl);
+          } else {
+            // If no jobs found, redirect to first page
+            router.push('/careers?page=1', undefined, { shallow: true });
+          }
+        } catch (error) {
+          console.error('Error fetching jobs:', error);
+          // On error, redirect to first page
+          router.push('/careers?page=1', undefined, { shallow: true });
+        } finally {
+          setLoading(false);
+        }
+      }
+    };
+
+    // Only fetch if we have a page query parameter
+    if (router.query.page) {
+      fetchPageJobs();
+    }
+  }, [router.query.page, totalPages, router]);
+
+  // Also handle direct navigation (when someone visits /careers?page=2 directly)
+  useEffect(() => {
+    const pageFromUrl = parseInt(router.query.page) || 1;
+    if (pageFromUrl !== currentPage && pageFromUrl >= 1 && pageFromUrl <= totalPages) {
+      setCurrentPage(pageFromUrl);
+    }
+  }, [router.query.page, currentPage, totalPages]);
+
+  // Handle route transitions for individual job pages
   useEffect(() => {
     const handleStart = () => setLoading(true);
     const handleComplete = () => setLoading(false);
@@ -88,48 +142,59 @@ export default function Careers({ initialJobs }) {
                   <p className="text-gray-500 mt-2">Please check back later or follow us for updates.</p>
                 </div>
               ) : (
-                <div className="space-y-8">
-                  {jobs.map((job, index) => (
-                    <motion.div
-                      key={job.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow p-8"
-                    >
-                      <div className="flex flex-col md:flex-row md:items-center gap-6">
-                        <div className="flex-1">
-                          <h3 className="text-2xl font-bold mb-2">{job.title.rendered}</h3>
-                          <div className="flex flex-wrap gap-4 mb-4">
-                            {job.acf?.location && (
-                              <span className="flex items-center text-gray-600">
-                                <FaMapMarkerAlt className="mr-2 text-primary" />
-                                {job.acf.location}
-                              </span>
-                            )}
-                            {job.acf?.salary && (
-                              <span className="text-gray-600">Salary: {job.acf.salary}</span>
-                            )}
-                            {job.acf?.is_remote && (
-                              <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
-                                Remote Available
-                              </span>
-                            )}
+                <>
+                  <div className="space-y-8 mb-8">
+                    {jobs.map((job, index) => (
+                      <motion.div
+                        key={job.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow p-8"
+                      >
+                        <div className="flex flex-col md:flex-row md:items-center gap-6">
+                          <div className="flex-1">
+                            <h3 className="text-2xl font-bold mb-2">{job.title.rendered}</h3>
+                            <div className="flex flex-wrap gap-4 mb-4">
+                              {job.acf?.location && (
+                                <span className="flex items-center text-gray-600">
+                                  <FaMapMarkerAlt className="mr-2 text-primary" />
+                                  {job.acf.location}
+                                </span>
+                              )}
+                              {job.acf?.salary && (
+                                <span className="text-gray-600">Salary: {job.acf.salary}</span>
+                              )}
+                              {job.acf?.is_remote && (
+                                <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
+                                  Remote Available
+                                </span>
+                              )}
+                            </div>
+                            <div className="prose max-w-none text-gray-600 mb-6">
+                              {job.acf?.summary}
+                            </div>
+                            <button
+                            onClick={() => router.push(`/careers/${job.slug}`)} 
+                            className="flex items-center text-primary font-medium hover:text-primary-dark transition-colors cursor-pointer">
+                              Apply Now <FaChevronRight className="ml-2" />
+                            </button>
                           </div>
-                          <div className="prose max-w-none text-gray-600 mb-6">
-                            {job.acf?.summary}
-                          </div>
-                          <button
-                          onClick={() => router.push(`/careers/${job.slug}`)} 
-                          className="flex items-center text-primary font-medium hover:text-primary-dark transition-colors cursor-pointer">
-                            Apply Now <FaChevronRight className="ml-2" />
-                          </button>
                         </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Pagination - Only show if we have multiple pages */}
+                  {totalPages > 1 && (
+                    <Pagination 
+                      currentPage={currentPage}
+                      totalPages={totalPages}
+                      onPageChange={handlePageChange}
+                    />
+                  )}
+                </>
               )}
             </motion.div>
           </div>
@@ -149,7 +214,7 @@ export default function Careers({ initialJobs }) {
                 We're always looking for talented professionals. Send us your resume!
               </p>
               <button 
-                className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-medium transition-colors duration-300"
+                className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-medium transition-colors duration-300 cursor-pointer"
                 onClick={() => window.location.href = 'mailto:careers@nexussoloutions.com'}
               >
                 Submit Your Resume
@@ -164,9 +229,35 @@ export default function Careers({ initialJobs }) {
 }
 
 export async function getStaticProps() {
-  const jobs = await getJobs();
-  return {
-    props: { initialJobs: jobs },
-    revalidate: 120 // Update every 2 minutes
-  };
+  const perPage = 6; // Match blog page per_page count
+  
+  try {
+    const jobs = await getJobs();
+    
+    // Calculate total pages based on total jobs and perPage
+    const totalJobs = jobs.length;
+    const totalPages = Math.ceil(totalJobs / perPage);
+    
+    // Get only the first page of jobs for initial load
+    const initialJobs = jobs.slice(0, perPage);
+    
+    return {
+      props: { 
+        initialJobs: initialJobs,
+        totalPages: totalPages || 1,
+        initialPage: 1
+      },
+      revalidate: 120 // Update every 2 minutes
+    };
+  } catch (error) {
+    console.error('Error in getStaticProps:', error);
+    return {
+      props: { 
+        initialJobs: [],
+        totalPages: 1,
+        initialPage: 1
+      },
+      revalidate: 120
+    };
+  }
 }

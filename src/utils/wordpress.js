@@ -49,9 +49,9 @@ try {
 }
 }
 
-export async function getJobs() {
+export async function getJobs(query = '') {
   try {
-    const res = await wp.get('/wp/v2/jobs?acf_format=standard&_embed');
+    const res = await wp.get(`/wp/v2/jobs?acf_format=standard&_embed${query}`);
     return res.data;
   } catch (error) {
     console.error('Error fetching jobs:', error);

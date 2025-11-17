@@ -107,7 +107,7 @@ export default function Footer() {
             
             <div className="flex space-x-4">
               <a 
-                href="https://linkedin.com/company/nexus-solutions" 
+                href="#" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-primary transition-colors text-2xl"
@@ -116,7 +116,7 @@ export default function Footer() {
                 <FaLinkedin />
               </a>
               <a 
-                href="https://instagram.com/nexus-solutions" 
+                href="#" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-primary transition-colors text-2xl"
@@ -125,7 +125,7 @@ export default function Footer() {
                 <FaInstagram />
               </a>
               <a 
-                href="https://facebook.com/nexus-solutions" 
+                href="#" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-primary transition-colors text-2xl"
